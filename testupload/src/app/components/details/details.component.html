@@ -1,0 +1,8 @@
+<div *ngIf="details">
+	<h1>{{details.name}} </h1>
+	<img [src]="details.img.imgName" alt="">
+</div>
+<button (click)="onDelete()" class="btn btn-danger">Delete</button>
+<button (click)="onDownload()" class="btn btn-danger">Download</button>
+
+<button type="button" (click)="onStream()">on Stream</button>

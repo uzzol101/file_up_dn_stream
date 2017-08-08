@@ -1,0 +1,24 @@
+ <form (submit)="onSubmit(name.value,file.files,$event)">
+    <div class="form-group">
+      <label for="">Name</label>
+      <input #name  name="name" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="">Image</label>
+    <input #file type="file" name="file"/>
+    </div>
+
+    <button  type="submit" class="btn btn-primary">Send Data</button>
+  </form> 
+
+  <h5 *ngIf="progressPercentage"><i>{{progressPercentage}} %</i></h5>
+  
+
+  <div *ngIf="data">
+      <div *ngFor=" let d of data ">
+          <h1>{{d.name}} </h1>
+          <img [src]="d.img.imgName" alt="">
+          <a [routerLink]="['/details/',d._id]" class="btn btn-primary">Go to Details</a>
+      </div>
+  </div>
